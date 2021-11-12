@@ -1,10 +1,35 @@
 import './App.css';
+import React, {useEffect} from 'react';
+import { useDispatch } from 'react-redux';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import LandingPage from './components/landingPAge/LandingPage';
+import Home from './components/home/Home';
+import AddActivity from './components/addActivity/AddActivity';
+import CountryDetails from './components/countryDetails/CountryDetails'
+import { getActivity, getAllCountries} from './redux/actions/index';
+
 
 function App() {
+  const dispatch = useDispatch();
+
+   useEffect(() => {
+        dispatch(getAllCountries())
+        dispatch(getActivity()) 
+    }, [dispatch])
+
+  
   return (
-    <div className="App">
-      <h1>Henry Countries</h1>
-    </div>
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<LandingPage />} />
+        <Route  exact path='/home' element={<Home />} />
+        <Route  exact path='/countries/:id' element={<CountryDetails />} />
+        <Route  path='addActivity' element={<AddActivity />} />
+      </Routes>     
+    </BrowserRouter>
+    
+    </>
   );
 }
 

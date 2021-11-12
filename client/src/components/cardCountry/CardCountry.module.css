@@ -1,0 +1,47 @@
+.card {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    margin: 0.5%;
+    padding: 0.5%;
+    background-color: rgb(117, 117, 71);;
+    box-shadow: 2px 5px 20px 3px rgb(41, 228, 4);
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .image_container {
+    width: 20%;
+    margin-right: 3%;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .text_container {
+    text-align: left;
+  }
+  
+  .link {
+    text-decoration: none;
+    margin-bottom: 0;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  .country {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  
+  .continents {
+    font-size: 15px;
+    margin-top: 0;
+    color: rgb(41, 167, 226);;
+  }
+  

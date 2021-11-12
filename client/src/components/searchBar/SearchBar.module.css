@@ -1,0 +1,31 @@
+.container{
+    height: 40px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.input{
+    height: 80%;
+    width: 60%;
+    background-color: rgb(199, 207, 171);
+    border: 2px solid rgb(27, 112, 16);
+}
+
+.btn{
+    height: 80%;
+    width: 20%;
+    background-color: rgb(235, 227, 117);
+    border: 2px solid rgb(89, 145, 72);
+   
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(64, 158, 20);
+    color:gainsboro;
+    border: 2px solid rgb(154, 245, 35);
+
+}
