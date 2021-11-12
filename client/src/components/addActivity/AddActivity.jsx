@@ -25,6 +25,19 @@ export default function AddActivity(){
     }, [dispatch])
 
 
+    function handleSubmit(e){
+        e.preventDefault()
+        axios.post('http://localhost:3001/activities', activity)
+        setActivity({
+            name:'',
+            difficulty:'',
+            duration:'',
+            season:'',
+            countries:[]
+        })
+       dispatch(addActivity())
+        alert('~ Activity has been Created ~')
+    }
     function handleChange(e){
         setActivity({
             ...activity,
@@ -39,19 +52,6 @@ export default function AddActivity(){
         })
     }
 
-    function handleSubmit(e){
-        e.preventDefault()
-        axios.post('http://localhost:3001/activities', activity)
-        setActivity({
-            name:'',
-            difficulty:'',
-            duration:'',
-            season:'',
-            countries:[]
-        })
-       dispatch(addActivity())
-        alert('~ Activity has been Created ~')
-    }
 
     return (
         <>
@@ -66,6 +66,7 @@ export default function AddActivity(){
                     <div className={s.formSection}>
                         <label className={s.label} htmlFor='name'>Activity Name:   </label>
                         <input
+                            key={activity.name}
                             name='name'
                             type='text'
                             value={activity.name}
@@ -77,7 +78,8 @@ export default function AddActivity(){
 
                     <div className={s.formSection}>
                         <label className={s.label} htmlFor='difficulty'>Activity Difficulty: </label>
-                        <select id='difficulty'
+                        <select key={activity.difficulty}
+                                id='difficulty'
                                 name='difficulty'
                                 type='text'
                                 value={activity.difficulty}
@@ -95,21 +97,24 @@ export default function AddActivity(){
 
                     <div className={s.formSection}>
                         <label className={s.label} htmlFor='name'>Activity Duration: </label>
-                        <input
-                            id='duration'
-                            name='duration'
-                            type='text'
-                            value={activity.duration} 
-                            placeholder='hs-days...'
-                            required='required' 
-                            className={s.input}
-                            onChange={handleChange}>
-                        </input><br></br>
+                        <input 
+                                key={activity.duration}
+                                id='duration'
+                                name='duration'
+                                type='text'
+                                value={activity.duration} 
+                                placeholder='hs-days...'
+                                required='required' 
+                                className={s.input}
+                                onChange={handleChange}>
+                            </input><br></br>
                     </div>
 
                     <div className={s.formSection}>
                         <label className={s.label} htmlFor='season'>Activity Season: </label>
-                        <select id='season'
+                        <select 
+                                key={activity.season}
+                                id='season'
                                 name='season'
                                 type='text'
                                 value={activity.season}
@@ -127,15 +132,17 @@ export default function AddActivity(){
                     <div className={s.formSection}>
                         <label className={s.label} htmlFor='countries'>Countries: </label>
                         <select 
+                                key={activity.countries}
                                 name='countries'
                                 type='text'
                                 value={activity.countries}
-                                
                                 className={s.input}
                                 onChange={handleSelect}>
                              <option value=''>Choose your Countries</option> 
                              {countries.map((c) => (
-                                 <option value={c.id}>{c.name}</option>
+                                 <option 
+                                 key={c.id}
+                                 value={c.id}>{c.name}</option>
                                  ))}
                         </ select> <br></br>
                     </div>

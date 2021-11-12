@@ -39,13 +39,15 @@ export function getCountryByName(name) {
 };
 
 export function getCountryDetails(id) {
-    return async(dispatch) =>{
+    return async function(dispatch){
         try{
-            const details= await axios.get(`http://localhost:3001/countries/${id}}`)
+            const details= await axios.get(`http://localhost:3001/countries/${id}`)
+            
             return dispatch({
                 type: GET_COUNTRY_DETAILS,
-                payload: details.data,
+                payload: details.data
             })
+           
         }catch(err){
             console.log(err)
         }   

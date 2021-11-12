@@ -22,8 +22,7 @@ router.post('/', async(req, res) => {
         },
 
         include: {
-            model: Country,
-            attributes:["id"]
+             Country
         }
     })
     return res.status(200).json(foundActivity)

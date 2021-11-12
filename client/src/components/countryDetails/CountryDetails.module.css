@@ -1,69 +1,72 @@
 .container{
-    height:100hv;
-    background-color: rgb(206, 218, 42);;
+    height: 200px;
+  
+    /* background-color: rgb(206, 218, 42); */
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: cover;
-    z-index: -1;
+   
 }
-
+.flags{
+    padding-top: 5%;
+    margin-top: 500px;
+    margin-left: 150px;
+    padding-bottom: 20px;
+    display: flex;
+   flex-direction:row;
+    align-items:flex-end;
+  ;
+    width: 300px;
+    height: 200px;
+}
 .card{
     display: flex;
-    width: 300px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(114, 168, 13);
-    box-shadow: -1px 2px 104px 12 px rgb(31, 235, 41);
-    z-index: 10;
+    background-color: rgb(248, 241, 142);
+    border-radius: 15px;
+   
+   
 }
 
 .dataContainer{
-    margin-top: 2vh;
+    margin-top: 0;
+    margin-left: 150px;
+    margin-bottom: 300px;
     
 }
 
 .image{
-    width: 55px;
-    height: 40vh;
+    width: 20px;
+    height: 30px;
 }
 
 .title{
-    margin: 0;
+    margin-right: 200px;
+  
 }
 
 .subtitle{
-    margin-top:1vh;
-    margin-bottom: 3vh;
+    margin-bottom: 20px;
+    padding: 30px;
 }
 
 h4{
-    margin: 0.5vh;
+    margin: 0.3vh;
+    
 }
 
 .activities{
-    margin-top: 3vh;
-    margin-bottom: 0;
+   display: inline;
 }
 
 ul li{
-    margin: 0;
-    padding: 0;
+    margin-bottom: 50px;
+
+    
 }
 
-.btn{
-    width: 50%;
-    background-color: rgb(200, 112, 235);
-    border:#fffc47 solid 2px;
-    border-radius: 5px;
-    line-height: 2rem;
-    font-size: 1rem;
-}
 
-.btn:hover{
-    cursor: pointer;
-    background-color: #fffc47;
-    color:peachpuff;
-    border:rgb(200, 112, 235) solid 2px;
-}

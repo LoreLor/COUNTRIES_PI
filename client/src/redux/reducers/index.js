@@ -35,6 +35,7 @@ const initialState = {
         case GET_COUNTRY_DETAILS:
             return {
                 ...state,
+                allCountries: action.payload,
                 countryDetail: action.payload
             };
             

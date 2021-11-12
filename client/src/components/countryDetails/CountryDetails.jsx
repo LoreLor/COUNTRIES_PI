@@ -8,24 +8,25 @@ import s from './CountryDetails.module.css'
 
 
 export default function CountryDetails(){
-    const {id} = useParams();
     const dispatch = useDispatch();
-
-    const details = useSelector((state) => state.countryDetail);
-
+    const {id} = useParams();
     useEffect(() => {
         dispatch(getCountryDetails(id));    
-    },[dispatch, id]);
-
-
+    },[dispatch,id]);
+    
+    const details = useSelector((state) => state.countryDetail);
+    
     return (
         <>
         <NavBar />
+        {
+         details ?(
        
             <div className={s.container}>
+                <div key={details.id}></div>
                 <div className={s.card}>
                     <div className={s.imgContainer}>
-                       <img src={details.flags}  alt="image_flag" />
+                       <img src={details.flags} className={s.flags} alt="image_flag" />
                     </div>
                 
                 <div className={s.dataContainer}>
@@ -33,31 +34,29 @@ export default function CountryDetails(){
                        {details.name} ~ {details.id}
 
                     </h2>
-                    <h2 className={s.subtitle}>
-                        {details.continents} 
-                        {details.subregion ? ' ~ ' + details.subregion : null}
-                    </h2>
-                    <h4>Capital: {details.capital}</h4>
-                    <h4>Population: {details.population}</h4>
-                    <h4>Area: {details.area} km²</h4>
-                    <h4 className={s.activities}>Activities:</h4>
+                    <h4 >Continent: {details.continents} </h4>
+                    <h4> Subregion: {details.subregion ? ' ~ ' + details.subregion : '---'}</h4>
+                   
+                    <h4>Capital:  {details.capital}</h4>
+                    <h4>Population:  {details.population}</h4>
+                    <h4>Area:  {details.area} km²</h4>
+                    <h4 className={s.activities}>Activities:  </h4>
                     <ul>
                         {details.activities && 
                         details.activities.map((a) => (
                             <li key={a.id}>
                                 <p>
                                     <strong>{a.name}</strong> ({a.season}) 
-                                    ~ Duration: {' '} {a.duration} 
-                                    ~ Difficulty: {a.difficulty}
+                                    ~ Duration:   {' '} {a.duration} 
+                                    ~ Difficulty:   {a.difficulty}
                                 </p>
                             </li>
                         ))}
                     </ul>     
                 </div>
                 </div>
-                </div>
-              
-               
+                </div>    ):(<span>Country Not Found</span>)
+}
     
  </>
 )}
