@@ -103,12 +103,12 @@ export default function Home(){
                     <select className={s.filter} 
                     onChange={(e) => handleFilterByContinent(e)}>
                         <option value='All'>Filters By Continents</option>
-                        <option value='Africa'>Africa</option>
-                        <option value='Asia'>Asia</option>
-                        <option value='Europe'>Europe</option>
-                        <option value='North America'>North America</option>
-                        <option value='Oceania'>Oceania</option>
-                        <option value='South America'>South America</option>
+                        <option value='{Africa}'>Africa</option>
+                        <option value='{Asia}'>Asia</option>
+                        <option value='{Europe}'>Europe</option>
+                        <option value='{"North America"}'>North America</option>
+                        <option value='{Oceania}'>Oceania</option>
+                        <option value='{"South America"}'>South America</option>
                     </select>
 
                     <select className={s.filter} 
