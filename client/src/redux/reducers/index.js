@@ -2,12 +2,12 @@
 import{ GET_ALL_COUNTRIES, 
         GET_COUNTRY_BY_NAME, 
         GET_COUNTRY_DETAILS, 
-        ADD_ACTIVITY, 
         FILTER_BY_CONTINENT, 
         FILTER_BY_ACTIVITY, 
         FILTER_ACT_BY_SEASON, 
         SORT_COUNTRIES,
-        GET_ACTIVITY
+        GET_ACTIVITY,
+        ADD_ACTIVITY
     } from '../actions/actionTypes';
 
 const initialState = {
@@ -38,10 +38,15 @@ const initialState = {
                 allCountries: action.payload,
                 countryDetail: action.payload
             };
-            
-        case ADD_ACTIVITY:
-            return state;
 
+        case ADD_ACTIVITY:
+            return {
+                ...state,
+
+            };   
+        
+            
+        
         case GET_ACTIVITY:
             return {
                 ...state,
@@ -59,8 +64,9 @@ const initialState = {
 
         case FILTER_BY_ACTIVITY:
             const filteredActivity = action.payload === 'All'
-            ? state.allActivities
-            : state.allActivities.filter((a) => a.name === action.payload)
+            ? state.allCountries
+            : state.allCountries.filter((c) => c.activities && c.activities.filter((a)=>
+            a.name === action.payload).length)
             return {
                 ...state,
                 filters: filteredActivity
@@ -68,8 +74,9 @@ const initialState = {
 
         case FILTER_ACT_BY_SEASON:
             const filteredActBySeason = action.payload === 'All'
-            ? state.allActivities
-            : state.allActivities.filter((s) => s.season === action.payload)
+            ? state.allCountries
+            : state.allCountries.filter((c) => c.activities && c.activities.filter((a)=>
+            a.season === action.payload).length)
             return {
                 ...state,
                 filters: filteredActBySeason

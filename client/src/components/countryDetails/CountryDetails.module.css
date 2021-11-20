@@ -1,7 +1,7 @@
 .container{
     height: 200px;
   
-    /* background-color: rgb(206, 218, 42); */
+    /* background-color: rgb(206, 218, 42);  */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,64 +9,74 @@
    
 }
 .flags{
-    padding-top: 5%;
-    margin-top: 500px;
-    margin-left: 150px;
+    padding-top: 8%;
+    margin-top: 150px;
+    margin-left: 130px;
     padding-bottom: 20px;
     display: flex;
    flex-direction:row;
-    align-items:flex-end;
-  ;
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 300px;
 }
 .card{
     display: flex;
     width: 600px;
-    height: 800px;
+    height: 700px;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(248, 241, 142);
+    background-color: rgb(233, 230, 93);
     border-radius: 15px;
+    margin-top:550px ;
+    box-shadow: -2px 2px 104px 12px rgb(93, 247, 4);
+   
+
+   
    
    
 }
 
 .dataContainer{
-    margin-top: 0;
-    margin-left: 150px;
-    margin-bottom: 300px;
+    margin-top: 15px;
+    margin-left: 130px;
+    margin-bottom: 200px;
     
 }
 
 .image{
     width: 20px;
     height: 30px;
+    
 }
 
 .title{
     margin-right: 200px;
+    font-size: 25px;
+    color: rgb(19, 16, 233);
   
 }
 
-.subtitle{
+/* .subtitle{
     margin-bottom: 20px;
-    padding: 30px;
-}
+    padding: 20px;
+} */
 
 h4{
-    margin: 0.3vh;
+    margin: 10px;
     
 }
 
 .activities{
-   display: inline;
+    font-size: 18px;
+    color: rgb(233, 31, 16);
+  
 }
 
-ul li{
-    margin-bottom: 50px;
-
-    
+li{
+    margin-bottom: 15px;
+    padding: 1px;
+    margin-left:10px;
+    display:list-item;
 }
+ 
 
 

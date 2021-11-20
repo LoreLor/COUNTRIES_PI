@@ -13,7 +13,8 @@ export default function CardsCountries({allCountries}){
                 id={country.id}
                 flags={country.flags}
                 name={country.name}
-                continents={country.continents} />
+                continents={country.continents} 
+                 />
                 )}
         </section>
        

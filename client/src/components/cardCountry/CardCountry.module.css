@@ -2,10 +2,10 @@
     width: 75%;
     display: flex;
     flex-direction: row;
-    margin: 0.5%;
-    padding: 0.5%;
-    background-color: rgb(117, 117, 71);;
-    box-shadow: 2px 5px 20px 3px rgb(41, 228, 4);
+    margin: 3%;
+    padding: 2%;
+    background-color: rgb(206, 206, 2);;
+    box-shadow: 2px 5px 20px 3px rgb(45, 248, 4);
   }
   
   .card:hover {
@@ -20,10 +20,12 @@
   .image {
     width: 100%;
     height: auto;
+   
   }
   
   .text_container {
     text-align: left;
+    padding-inline-start: 2%;
   }
   
   .link {
@@ -35,13 +37,16 @@
     text-decoration: underline;
   }
   .country {
-    font-size: 20px;
+    font-size: 30px;
+    color:rgb(37, 31, 3);
     margin-bottom: 0;
   }
   
   .continents {
     font-size: 15px;
-    margin-top: 0;
-    color: rgb(41, 167, 226);;
+    margin-top: 20px;
+    color: rgb(15, 12, 182);;
   }
+  
+  
   

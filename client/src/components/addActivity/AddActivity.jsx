@@ -1,23 +1,20 @@
-import axios from 'axios';
+//import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import { getAllCountries, addActivity} from '../../redux/actions';
-
 import s from './AddActivity.module.css';
 
 
 export default function AddActivity(){
     const dispatch = useDispatch(); 
-   
     const countries = useSelector(state => state.allCountries)
-
     const[activity, setActivity] = useState({
         name:'',
-        difficulty:'',
+        difficulty: '',
         duration:'',
         season:'',
-        countries:[]  
+        countries:[]
     })
 
     useEffect(() => {
@@ -27,7 +24,8 @@ export default function AddActivity(){
 
     function handleSubmit(e){
         e.preventDefault()
-        axios.post('http://localhost:3001/activities', activity)
+        dispatch(addActivity(activity))
+        // axios.post('http://localhost:3001/activities', activity)
         setActivity({
             name:'',
             difficulty:'',
@@ -35,7 +33,7 @@ export default function AddActivity(){
             season:'',
             countries:[]
         })
-       dispatch(addActivity())
+      
         alert('~ Activity has been Created ~')
     }
     function handleChange(e){
@@ -58,7 +56,6 @@ export default function AddActivity(){
         <div className={s.container}>
             <div className={s.card}>
               
-
                 <form onSubmit={handleSubmit}>
 
                     <h2 className={s.title}>Add Your Activity</h2><hr></hr>
@@ -66,7 +63,7 @@ export default function AddActivity(){
                     <div className={s.formSection}>
                         <label className={s.label} htmlFor='name'>Activity Name:   </label>
                         <input
-                            key={activity.name}
+                            // key={activity.name}
                             name='name'
                             type='text'
                             value={activity.name}
@@ -98,7 +95,7 @@ export default function AddActivity(){
                     <div className={s.formSection}>
                         <label className={s.label} htmlFor='name'>Activity Duration: </label>
                         <input 
-                                key={activity.duration}
+                                // key={activity.duration}
                                 id='duration'
                                 name='duration'
                                 type='text'

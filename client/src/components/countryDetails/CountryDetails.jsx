@@ -32,7 +32,6 @@ export default function CountryDetails(){
                 <div className={s.dataContainer}>
                     <h2 className={s.title}>
                        {details.name} ~ {details.id}
-
                     </h2>
                     <h4 >Continent: {details.continents} </h4>
                     <h4> Subregion: {details.subregion ? ' ~ ' + details.subregion : '---'}</h4>
@@ -41,18 +40,17 @@ export default function CountryDetails(){
                     <h4>Population:  {details.population}</h4>
                     <h4>Area:  {details.area} km²</h4>
                     <h4 className={s.activities}>Activities:  </h4>
-                    <ul>
+                
                         {details.activities && 
                         details.activities.map((a) => (
-                            <li key={a.id}>
-                                <p>
-                                    <strong>{a.name}</strong> ({a.season}) 
-                                    ~ Duration:   {' '} {a.duration} 
-                                    ~ Difficulty:   {a.difficulty}
-                                </p>
-                            </li>
+                            <p key={a.id}>
+                            <li>Name: {a.name}</li>
+                            <li>Season: {a.season} </li>
+                            <li>Duration:  {' '} {a.duration} </li>
+                            <li>Difficulty: {a.difficulty} </li>
+                            </p>
                         ))}
-                    </ul>     
+                   
                 </div>
                 </div>
                 </div>    ):(<span>Country Not Found</span>)

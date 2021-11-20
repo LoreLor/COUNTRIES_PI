@@ -16,6 +16,7 @@ import {
 export default function Home(){
     const dispatch = useDispatch();
     const filters = useSelector((state) => state.filters)
+    
     const [,setSort] = useState('')
     
     
@@ -66,7 +67,7 @@ export default function Home(){
     //por continente
     function handleFilterByContinent(e){
         dispatch(filterByContinent(e.target.value))
-        // setSort(e.target.value)
+        setSort(e.target.value)
     }
 
     //por actividad
@@ -81,6 +82,7 @@ export default function Home(){
         e.preventDefault()
         dispatch(filterActBySeason(e.target.value))
         setSort(e.target.value)
+        
     }
     //ordenamiento
     function handleSortCountries(e){
@@ -101,7 +103,7 @@ export default function Home(){
 
             <div className={s.filterContainer}>
                     <select className={s.filter} 
-                    onChange={(e) => handleFilterByContinent(e)}>
+                    onChange={handleFilterByContinent}>
                         <option value='All'>Filters By Continents</option>
                         <option value='{Africa}'>Africa</option>
                         <option value='{Asia}'>Asia</option>
@@ -112,7 +114,7 @@ export default function Home(){
                     </select>
 
                     <select className={s.filter} 
-                    onChange={(e) => handleFilterActBySeason(e)}>
+                    onChange={handleFilterActBySeason}>
                         <option value='All'>Filters By Season</option>
                         <option value='Autumn'>Autumn</option>
                         <option value='Spring'>Spring</option>
@@ -121,15 +123,18 @@ export default function Home(){
                     </select>
 
                     <select className={s.filter} 
-                    onChange={(e) => handleFilterByActivity(e)}>
+                    onChange={handleFilterByActivity}>
                         <option value='All'>Filters By Activities</option>
                         <option value='Surf'>Surf</option>
-                        <option value='Safari'>Sky</option>
+                        <option value='Safari'>Safari</option>
+                        <option value='Sky'>Sky</option>
                         <option value='Diving'>Diving</option>
+                        <option value='Montain Climb'>Montain-Climb</option>
+                        <option value='Camping'>Camping</option>
                     </select>
 
                     <select className={s.filter} 
-                    onChange={(e) => handleSortCountries(e)}>
+                    onChange={handleSortCountries}>
                         <option value='All'>Sorts</option>
                         <option value='AZ'>Countries AZ</option>
                         <option value='ZA'>Countries ZA</option>
@@ -150,6 +155,7 @@ export default function Home(){
                       id={c.id}
                       flags={c.flags}
                       continents={c.continents}
+                      activities={c.activities}
                       key={c.id}/>
                   ))
               ):(<h3>Country Not found</h3>)

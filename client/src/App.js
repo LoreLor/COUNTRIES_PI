@@ -23,15 +23,12 @@ function App() {
   
   return (
     <>
-    
       <Routes>
-        <Route exact path='/' element={<LandingPage />} />
+        <Route  exact path='/' element={<LandingPage />} />
         <Route  exact path='/home' element={<Home />} />
         <Route  exact path='/countries/:id' element={<CountryDetails />} />
         <Route  path='/addActivity' element={<AddActivity />} />
       </Routes>     
-   
-    
     </>
   );
 }

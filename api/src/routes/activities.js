@@ -16,21 +16,25 @@ router.post('/', async(req, res) => {
 
     await newActivity.addCountries(countries);
 
-    const foundActivity = await Activity.findOne({
+    const foundActivity = await Activity.findAll({
         where:{
-            name: name
+            name: name.toUpperCase()
         },
 
-        include: {
-             Country
-        }
+        include: [{
+            model: Country,
+            attributes:['name']
+        }] 
     })
     return res.status(200).json(foundActivity)
 })
 
+
 router.get('/', async(req,res) =>{
     
-    const activitiesCreated = await Activity.findAll()
+    const activitiesCreated = await Activity.findAll({
+        include: Country
+    })
     res.status(200).json(activitiesCreated)
 })
 

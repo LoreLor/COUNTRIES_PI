@@ -54,19 +54,16 @@ export function getCountryDetails(id) {
     }
 };
 
-export function addActivity() {
+export function addActivity(payload) {
     return async function (dispatch){
-        try{
-            const activity = await axios.post('http://localhost:3001/activities')
+            const newActivity= await axios.post('http://localhost:3001/activities', payload)
             return dispatch({
                 type: ADD_ACTIVITY,
-                payload: activity
+                payload: newActivity
             })
-        }catch(err){
-            console.log(err)
         }
     }
-};
+
 
 export function getActivity(){
     return async function(dispatch){
