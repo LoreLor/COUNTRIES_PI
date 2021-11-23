@@ -1,7 +1,5 @@
 .container{
     height: 200px;
-  
-    /* background-color: rgb(206, 218, 42);  */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,10 +27,6 @@
     margin-top:550px ;
     box-shadow: -2px 2px 104px 12px rgb(93, 247, 4);
    
-
-   
-   
-   
 }
 
 .dataContainer{
@@ -55,14 +49,8 @@
   
 }
 
-/* .subtitle{
-    margin-bottom: 20px;
-    padding: 20px;
-} */
-
 h4{
-    margin: 10px;
-    
+    margin: 10px;  
 }
 
 .activities{

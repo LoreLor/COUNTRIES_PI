@@ -47,7 +47,7 @@
   .ul{
     display: flex;
     justify-content: center;
-    background-color: rgb(43, 228, 18);
+    background-color: rgb(45, 206, 13);
   }
   
   .filterContainer{
@@ -63,5 +63,15 @@
     border-color: rgb(42, 148, 42);
    
 } 
+.btnPage{
+  background-color: #f1e8bf;
+  border: 1px solid #9fbb7a;
+}
+.btnPage:hover {
+  cursor: pointer;
+  background-color: #f7d722;
+  color: #362c18;
+  border: 2px solid #f0a309;
+}
 
 

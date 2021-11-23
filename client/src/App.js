@@ -12,11 +12,11 @@ import { getActivity, getAllCountries} from './redux/actions/index';
 //al montarse la app ya estan listos los paises
 
 function App() {
-  // const dispatch = useDispatch();
-  //  useEffect(() => {
-  //       dispatch(getAllCountries())
-  //       dispatch(getActivity()) 
-  //   }, [dispatch])
+  const dispatch = useDispatch();
+   useEffect(() => {
+        dispatch(getAllCountries())
+        dispatch(getActivity()) 
+    }, [dispatch])
 
   
   return (

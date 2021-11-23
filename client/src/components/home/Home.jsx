@@ -19,8 +19,6 @@ export default function Home(){
     
     const [,setSort] = useState('')
     
-    
-
     useEffect(() => {
         dispatch(getAllCountries())
         dispatch(getActivity())
@@ -55,7 +53,7 @@ export default function Home(){
     const renderPages = pages.map(page => (
         <li key={page}>
             <div>
-                <button onClick={e => pagination(e, page)}>
+                <button className={s.btnPage} onClick={e => pagination(e, page)}>
                 {page}
                 </button>
             </div>
@@ -155,6 +153,7 @@ export default function Home(){
                       id={c.id}
                       flags={c.flags}
                       continents={c.continents}
+                      population={c.population}
                       key={c.id}/>
                   ))
               ):(<h3>Country Not found</h3>)

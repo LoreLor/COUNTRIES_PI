@@ -50,6 +50,15 @@ export default function AddActivity(){
         })
     }
 
+    function clearCountry(e){
+        e.preventDefault()
+        setActivity({
+            ...activity,
+            countries:[]
+        })
+    }
+
+
 
     return (
         <>
@@ -140,10 +149,14 @@ export default function AddActivity(){
                              <option value=''>Choose your Countries</option> 
                              {countries.map((c) => (
                                  <option 
-                                 key={c.id}
-                                 value={c.id}>{c.name}</option>
+                                        key={c.id}
+                                        value={c.id}>{c.name}
+                                 </option>
                                  ))}
                         </ select> <br></br>
+                       
+                        <button onClick={clearCountry}>Delete Countries</button>
+                       
                     </div>
                     <ul>
                         <li>{activity.countries.map((c) => `${c} ~ `)}</li>

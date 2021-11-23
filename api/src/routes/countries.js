@@ -37,8 +37,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async(req, res) => {
     const {id} = req.params;
     
-    try{
-       
+    try{  
          const countryDetail= await Country.findOne({
             where:{
                 id: id.toUpperCase()
@@ -48,9 +47,6 @@ router.get('/:id', async(req, res) => {
         
             return res.status(200).json(countryDetail);
         
-      
-        
-
     }catch(err){
         res.status(500).json({msg: err})
     }

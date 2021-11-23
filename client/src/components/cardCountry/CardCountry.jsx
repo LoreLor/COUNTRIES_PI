@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import s from './CardCountry.module.css'
 
 
-export default function CardCountry({id, flags, name, continents}){
+export default function CardCountry({id, flags, name, continents,population}){
     return(
         <>
          <div className={s.card} key={id}> 
@@ -13,8 +13,8 @@ export default function CardCountry({id, flags, name, continents}){
             <div className={s.text_container}>
                 <Link  className={s.link} to={`/countries/${id}`}>{id}</Link>
                     <h1 className={s.country}> ~ {name} ~ </h1>
-                    <h2 className={s.continents}>{continents}</h2>
-                    
+                    <h2 className={s.continents}>Continent: {continents}</h2>
+                    <h2 className={s.population}>Population: {population}</h2>
             </div>
        </div> 
         </>
