@@ -10,7 +10,6 @@ export default function LandingPage(){
             <div className={s.textContainer}>
             <Link to='/home'>
                 <h2 className={s.title}>Countries</h2>
-                {/* <button className={s.btn}>ENTER</button> */}
             </Link>
             </div>
         </div>

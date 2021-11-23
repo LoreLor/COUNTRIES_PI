@@ -69,7 +69,8 @@ export default function AddActivity(){
                             value={activity.name}
                             placeholder='New Activity Name...'
                             className={s.input}
-                            onChange={handleChange}>
+                            onChange={handleChange}
+                            required ='required'>
                         </input><br></br>
                     </div>
 
@@ -134,7 +135,8 @@ export default function AddActivity(){
                                 type='text'
                                 value={activity.countries}
                                 className={s.input}
-                                onChange={handleSelect}>
+                                onChange={handleSelect}
+                                >
                              <option value=''>Choose your Countries</option> 
                              {countries.map((c) => (
                                  <option 

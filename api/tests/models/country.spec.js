@@ -17,6 +17,29 @@ describe('Country model', () => {
       it('should work when its a valid name', () => {
         Country.create({ name: 'Argentina' });
       });
+
+      it('should work when its a valid name', () => {
+        Country.create({ name: 'Colombia' });
+      });
+      it('should work when its a valid name', () => {
+        Country.create({ name: 'Francia' });
+      });
     });
-  });
+    describe('id', () => {
+      it('should throw an error if id is null', (done) => {
+        Country.create({})
+          .then(() => done(new Error('It requires a valid id')))
+          .catch(() => done());
+      });
+      it('should work when its a valid id', () => {
+        Country.create({ id: 'ARG' });
+      });
+      it('should work when its a valid id', () => {
+        Country.create({ id: 'COL' });
+      });
+      it('should work when its a valid id', () => {
+        Country.create({ id: 'FRA' });
+      });
 });
+});
+})

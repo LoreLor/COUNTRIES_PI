@@ -155,7 +155,6 @@ export default function Home(){
                       id={c.id}
                       flags={c.flags}
                       continents={c.continents}
-                      activities={c.activities}
                       key={c.id}/>
                   ))
               ):(<h3>Country Not found</h3>)
