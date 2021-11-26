@@ -15,8 +15,13 @@ export default function SearchBar(){
 
     function handleSubmit(e){
         e.preventDefault()
-        dispatch(getCountryByName(name))
+        if(name){
+            dispatch(getCountryByName(name))
+        }else{
+            alert('Name not Found')
+        }
         setName('')
+       
     }
 
     return(

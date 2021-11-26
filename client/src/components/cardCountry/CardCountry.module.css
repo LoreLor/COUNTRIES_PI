@@ -1,16 +1,18 @@
 .card {
     width: 75%;
+    border-radius: 15px;
     display: flex;
     flex-direction: row;
     margin: 3%;
     padding: 2%;
-    background-color: rgb(206, 206, 2);;
-    box-shadow: 2px 5px 20px 3px rgb(45, 248, 4);
+    background-color: rgb(218, 215, 97);;
+    box-shadow: 2px 5px 20px 3px rgb(61, 148, 43);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   
-  .card:hover {
+  /* .card:hover {
     transform: translateY(-2px);
-  }
+  } */
   
   .image_container {
     width: 20%;
@@ -50,7 +52,7 @@
   }
   .population{
     font-size: 15px;
-    color:darkblue
+    color:rgb(108, 52, 122)
   }
   
   

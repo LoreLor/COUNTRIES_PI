@@ -7,7 +7,7 @@ router.post('/', async(req, res) => {
     const {name, difficulty, duration, season, countries} = req.body;
 
     const newActivity = await Activity.create({
-        name,
+        name:name.charAt(0).toUpperCase()+name.slice(1),
         difficulty,
         duration,
         season,

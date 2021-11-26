@@ -14,7 +14,7 @@ export default function CardCountry({id, flags, name, continents,population}){
                 <Link  className={s.link} to={`/countries/${id}`}>{id}</Link>
                     <h1 className={s.country}> ~ {name} ~ </h1>
                     <h2 className={s.continents}>Continent: {continents}</h2>
-                    <h2 className={s.population}>Population: {population}</h2>
+                    <h2 className={s.population}>Population: {population} inhabitans</h2>
             </div>
        </div> 
         </>

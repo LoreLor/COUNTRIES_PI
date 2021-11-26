@@ -5,6 +5,9 @@ import {getCountryDetails} from '../../redux/actions/index';
 import NavBar from '../navBar/NavBar';
 import s from './CountryDetails.module.css'
 
+export function formatNumber(number){                //
+    return new Intl.NumberFormat().format(number);
+};
 
 
 export default function CountryDetails(){
@@ -37,17 +40,19 @@ export default function CountryDetails(){
                     <h4> Subregion: {details.subregion ? ' ~ ' + details.subregion : '---'}</h4>
                    
                     <h4>Capital:  {details.capital}</h4>
-                    <h4>Population:  {details.population}</h4>
-                    <h4>Area:  {details.area} km²</h4>
+                    <h4>Population:  {formatNumber(details.population)}</h4>
+                    <h4>Area:  {formatNumber(details.area)} km²</h4>
                     <h4 className={s.activities}>Activities:  </h4>
                 
                         {details.activities && 
                         details.activities.map((a) => (
                             <p key={a.id}>
+                                <div className={s.divi}>
                             <li>Name: {a.name}</li>
                             <li>Season: {a.season} </li>
                             <li>Duration:  {' '} {a.duration} </li>
                             <li>Difficulty: {a.difficulty} </li>
+                            </div>
                             </p>
                         ))}
                    

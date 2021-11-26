@@ -6,9 +6,12 @@ import{ GET_ALL_COUNTRIES,
         FILTER_BY_CONTINENT, 
         FILTER_BY_ACTIVITY, 
         FILTER_ACT_BY_SEASON, 
-        SORT_COUNTRIES
+        SORT_COUNTRIES,
+    
        } from './actionTypes';
 import axios from 'axios';
+
+
 
 export function getAllCountries() {
     return async function(dispatch){
@@ -63,6 +66,7 @@ export function addActivity(payload) {
             })
         }
     }
+   
 
 
 export function getActivity(){
@@ -107,4 +111,6 @@ export function sortCountries(payload){
         payload
     }
 };
+
+
 

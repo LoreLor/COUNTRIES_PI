@@ -7,7 +7,8 @@ import{ GET_ALL_COUNTRIES,
         FILTER_ACT_BY_SEASON, 
         SORT_COUNTRIES,
         GET_ACTIVITY,
-        ADD_ACTIVITY
+        ADD_ACTIVITY,
+     
     } from '../actions/actionTypes';
 
 const initialState = {
@@ -44,9 +45,7 @@ const initialState = {
                 ...state,
 
             };   
-        
-            
-        
+  
         case GET_ACTIVITY:
             return {
                 ...state,
@@ -109,6 +108,7 @@ const initialState = {
                   return  b.population - a.population;
                 })      
             }
+            
             return {
                 ...state,
                 filters: sorts

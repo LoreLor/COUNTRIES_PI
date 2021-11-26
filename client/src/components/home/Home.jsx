@@ -13,37 +13,45 @@ import {
         filterActBySeason, 
         sortCountries     } from '../../redux/actions/index';
 
+
+export function formatNumber(number){                //
+    return new Intl.NumberFormat().format(number);
+};
+
+
+
 export default function Home(){
     const dispatch = useDispatch();
     const filters = useSelector((state) => state.filters)
-    
     const [,setSort] = useState('')
-    
-    useEffect(() => {
-        dispatch(getAllCountries())
-        dispatch(getActivity())
-    }, [dispatch])
 
+    
     function handleClick(e){
         e.preventDefault()
         dispatch(getAllCountries())
     }
   
     //estados locales para paginado
-   
     const [currentPage, setCurrentPage] = useState(1)
-    const [countriesPage] = useState(9)
+    const [countriesPage, setCountriesPage] = useState(10)
 
-    let indexOfLastCountry = currentPage * countriesPage;  //1*9
-    let indexOfFirstCountry = indexOfLastCountry - countriesPage; //9-9
-    let currentCountries = filters?.slice(indexOfFirstCountry, indexOfLastCountry) //(0,9)
+    let indexOfLastCountry = currentPage * countriesPage;  //1*10
+    let indexOfFirstCountry = indexOfLastCountry - countriesPage; //10-10
+    let currentCountries = filters?.slice(indexOfFirstCountry, indexOfLastCountry) //(0,10)
     let pages = [];
 
     const numOfPages = Math.ceil(filters.length / countriesPage)
 
-    for(let i= 1; i<=numOfPages; i++){
+    for(let i= 2; i<=numOfPages; i++){
         pages.push(i)
     }
+
+    useEffect(() => {
+        dispatch(getAllCountries())
+        dispatch(getActivity())
+        setCountriesPage(10)
+    }, [dispatch])
+
 
     function pagination(e, page){
         e.preventDefault();
@@ -59,11 +67,11 @@ export default function Home(){
             </div>
         </li>
     ))
-
-    
+ 
           //Filtros
     //por continente
     function handleFilterByContinent(e){
+        e.preventDefault()
         dispatch(filterByContinent(e.target.value))
         setSort(e.target.value)
     }
@@ -90,49 +98,48 @@ export default function Home(){
     }
 
     
-
     return (
         <>
         <div className={s.container}>
             <NavBar />
-            <br></br>
-           <SearchBar />
-           <br></br>
+             <br></br>
+              <SearchBar />
+                <br></br>
 
             <div className={s.filterContainer}>
-                    <select className={s.filter} 
-                    onChange={handleFilterByContinent}>
+                <select className={s.filter} 
+                        onChange={handleFilterByContinent}>
                         <option value='All'>Filters By Continents</option>
-                        <option value='{Africa}'>Africa</option>
-                        <option value='{Asia}'>Asia</option>
-                        <option value='{Europe}'>Europe</option>
-                        <option value='{"North America"}'>North America</option>
-                        <option value='{Oceania}'>Oceania</option>
-                        <option value='{"South America"}'>South America</option>
-                    </select>
+                        <option value='Africa'>Africa</option>
+                        <option value='Asia'>Asia</option>
+                        <option value='Europe'>Europe</option>
+                        <option value='North America'>North America</option>
+                        <option value='Oceania'>Oceania</option>
+                        <option value='South America'>South America</option>
+                </select>
 
-                    <select className={s.filter} 
-                    onChange={handleFilterActBySeason}>
+                <select className={s.filter} 
+                        onChange={handleFilterActBySeason}>
                         <option value='All'>Filters By Season</option>
                         <option value='Autumn'>Autumn</option>
                         <option value='Spring'>Spring</option>
                         <option value='Summer'>Summer</option>
                         <option value='Winter'>Winter</option>
-                    </select>
+                </select>
 
-                    <select className={s.filter} 
-                    onChange={handleFilterByActivity}>
+                <select className={s.filter} 
+                        onChange={handleFilterByActivity}>
                         <option value='All'>Filters By Activities</option>
                         <option value='Surf'>Surf</option>
                         <option value='Safari'>Safari</option>
                         <option value='Sky'>Sky</option>
                         <option value='Diving'>Diving</option>
-                        <option value='Montain Climb'>Montain-Climb</option>
+                        <option value='Montain_Climb'>Montain-Climb</option>
                         <option value='Camping'>Camping</option>
-                    </select>
+                </select>
 
-                    <select className={s.filter} 
-                    onChange={handleSortCountries}>
+                <select className={s.filter} 
+                        onChange={handleSortCountries}>
                         <option value='All'>Sorts</option>
                         <option value='AZ'>Countries AZ</option>
                         <option value='ZA'>Countries ZA</option>
@@ -141,33 +148,30 @@ export default function Home(){
                     </select>
                  </div>  
 
-
             <div className={s.btnContainer}>
-                <button onClick={(e) => handleClick(e)} className={s.btn}>Refresh Country</button>
+                <button 
+                        onClick={(e)=>handleClick(e)} 
+                        className={s.btn}>Refresh Country
+                </button>
             </div>
-            
-              {currentCountries.length?(
-                  currentCountries.map((c) => (
-                      <CardCountry
-                      name={c.name}
-                      id={c.id}
-                      flags={c.flags}
-                      continents={c.continents}
-                      population={c.population}
-                      key={c.id}/>
-                  ))
-              ):(<h3>Country Not found</h3>)
-              } 
+                {currentCountries.length?(
+                    currentCountries.map((c) => (
+                        <CardCountry
+                        name={c.name}
+                        id={c.id}
+                        flags={c.flags}
+                        continents={c.continents}
+                        population={formatNumber(c.population)}
+                        key={c.id}/>
+                    ))
+                    ):(<h3>Country Not found</h3>)
+                } 
               </div> 
 
             <div className={s.countryContainer}>
-              <CardsCountries  countries={currentCountries} />
+                <CardsCountries  countries={currentCountries} />
             </div>
-        
-
             <ul className={s.ul}>{renderPages}</ul>
-      
-       
         </>
     )
 }        

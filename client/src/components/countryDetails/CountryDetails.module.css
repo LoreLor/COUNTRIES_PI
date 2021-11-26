@@ -7,10 +7,10 @@
    
 }
 .flags{
-    padding-top: 8%;
-    margin-top: 150px;
+    padding-top: 20%;
+    margin-top: 80px;
     margin-left: 130px;
-    padding-bottom: 20px;
+    
     display: flex;
    flex-direction:row;
     width: 350px;
@@ -43,7 +43,7 @@
 }
 
 .title{
-    margin-right: 200px;
+    margin-right: 150px;
     font-size: 25px;
     color: rgb(19, 16, 233);
   
@@ -56,15 +56,13 @@ h4{
 .activities{
     font-size: 18px;
     color: rgb(233, 31, 16);
+    margin:5px;
   
 }
 
-li{
-    margin-bottom: 15px;
-    padding: 1px;
-    margin-left:10px;
-    display:list-item;
+.divi{
+    margin-bottom: 30px;
+    margin-left:20px;  
 }
- 
 
 
