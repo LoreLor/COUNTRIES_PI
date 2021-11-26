@@ -12,7 +12,7 @@ import s from './AddActivity.module.css';
         if(!activity.name ){
             errors.name = 'You need input a Name';
         }else if( activity.name.length < 3 || /[0-9 -.+]/.test(activity.name)){
-            errors.name='Name is invalid';
+            errors.name='Invalid Name';
         }
         if(!activity.difficulty){
             errors.difficulty = 'You need select a Difficulty';
@@ -63,9 +63,10 @@ import s from './AddActivity.module.css';
                 countries:[]
             })
             alert('~ Activity has been Created ~')
-        }
+        }else{
             alert('Check your Inputs')
         }
+    }
     
 
         function handleChange(e){
@@ -111,7 +112,7 @@ import s from './AddActivity.module.css';
                                     name='name'
                                     type='text'
                                     value={activity.name}
-                                    placeholder='New Activity Name...'
+                                    placeholder='New Activity Name'
                                     onChange={handleChange}
                                     required ='required'
                                     className={errors.name && "danger"}      

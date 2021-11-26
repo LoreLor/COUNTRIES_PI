@@ -7,10 +7,10 @@
 .container{
     margin-top: 10px;
     display: flex;
-    flex-direction: column;
-    justify-content:center;
+    justify-content:space-around;
     align-items: center;
     background-size: cover;
+    background: url('../../images/actvidades_turisticas.jpg');
 }
 
 
@@ -20,7 +20,7 @@
     gap:15px;
     padding: 1vh 3vh;
     background-color: rgb(220, 228, 173);
-    box-shadow: -2px 2px 104px 12px rgb(247, 202, 4);
+    box-shadow: -2px 2px 104px 12px rgb(59, 199, 54);
     z-index:5;
     border-radius: 15px;
     width: 50%;

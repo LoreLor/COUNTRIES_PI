@@ -18,10 +18,9 @@ export default function SearchBar(){
         if(name){
             dispatch(getCountryByName(name))
         }else{
-            alert('Name not Found')
+            alert('Name not Found. Try again...')
         }
-        setName('')
-       
+        setName('')   
     }
 
     return(

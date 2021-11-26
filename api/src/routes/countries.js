@@ -19,16 +19,12 @@ router.get('/', async (req, res) => {
                 where:{
                     name: {
                         [Op.iLike]:`%${name}%`
-                    }
-                          //insensitive case
-                    },
-
+                        //insensitive case y me incluye name que contiene el input que ingreso
+                    }},
                 include: Activity
             })
             res.status(200).json(oneCountry)
-
         }
-        
     }catch(err){
         res.status(500).json({msg: err})
     }
@@ -44,9 +40,7 @@ router.get('/:id', async(req, res) => {
             },
             include: Activity
         })
-        
             return res.status(200).json(countryDetail);
-        
     }catch(err){
         res.status(500).json({msg: err})
     }

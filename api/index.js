@@ -23,31 +23,26 @@ const { conn, Country } = require('./src/db');
 
 
 // Syncing all the models at once.
-conn.sync({ force: true}).then(() => {
+conn.sync({ force: false}).then(() => {
   server.listen(3001, async() => {
     console.log('%s listening at 3001');
     try{
-    const apiCountries = await axios.get(
-      'https://restcountries.com/v3/all',
-    );
-    const allCountries = apiCountries.data.map((d) => ({
-                id: d.cca3,
-                name: d.name.common,
-                flags: d.flags[0],
-                continents: d.continents[0],
-                capital: d.capital? d.capital[0]: '---',
-                subregion: d.subregion,
-                area: d.area,
-                population: d.population
-    }))
+        const apiCountries = await axios.get('https://restcountries.com/v3/all');
+        const allCountries = apiCountries.data.map((d) => ({
+                    id: d.cca3,
+                    name: d.name.common,
+                    flags: d.flags[0],
+                    continents: d.continents[0],
+                    capital: d.capital? d.capital[0]: '---',
+                    subregion: d.subregion,
+                    area: d.area,
+                    population: d.population
+        }))
 
-    await Country.bulkCreate(allCountries)
-    return allCountries
-    
-    // console.log('Preloaded Countries')
-    //  // eslint-disable-line no-console
-  }catch(e) {
-    console.log('Catch an error: ', e)
-  }
-  });
+          await Country.bulkCreate(allCountries)
+          return allCountries
+    }catch(e) {
+      console.log('Catch an error: ', e)
+    }
+    });
 });

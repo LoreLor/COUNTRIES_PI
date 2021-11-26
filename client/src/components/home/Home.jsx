@@ -14,10 +14,9 @@ import {
         sortCountries     } from '../../redux/actions/index';
 
 
-export function formatNumber(number){                //
+export function formatNumber(number){                
     return new Intl.NumberFormat().format(number);
 };
-
 
 
 export default function Home(){
@@ -42,7 +41,7 @@ export default function Home(){
 
     const numOfPages = Math.ceil(filters.length / countriesPage)
 
-    for(let i= 2; i<=numOfPages; i++){
+    for(let i= 1; i<=numOfPages; i++){
         pages.push(i)
     }
 
@@ -87,7 +86,7 @@ export default function Home(){
     function handleFilterActBySeason(e){
         e.preventDefault()
         dispatch(filterActBySeason(e.target.value))
-        setSort(e.target.value)
+         setSort(e.target.value)
         
     }
     //ordenamiento
@@ -134,7 +133,7 @@ export default function Home(){
                         <option value='Safari'>Safari</option>
                         <option value='Sky'>Sky</option>
                         <option value='Diving'>Diving</option>
-                        <option value='Montain_Climb'>Montain-Climb</option>
+                        <option value='Montain_Climb'>Montain_Climb</option>
                         <option value='Camping'>Camping</option>
                 </select>
 
