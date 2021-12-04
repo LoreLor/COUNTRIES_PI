@@ -1,8 +1,9 @@
 .card {
-    width: 75%;
+    width: 90%;
     border-radius: 15px;
     display: flex;
     flex-direction: row;
+    
     margin: 3%;
     padding: 2%;
     background-color: rgb(218, 215, 97);;
@@ -17,11 +18,13 @@
   .image_container {
     width: 20%;
     margin-right: 3%;
+    size-adjust:initial;
   }
   
   .image {
     width: 100%;
     height:100%;
+    object-fit: contain;
    
   }
   

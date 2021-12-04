@@ -8,14 +8,16 @@
   }
   
   .countryContainer {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-area: auto;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-color: #121312;
-    margin-bottom: 5vh;
-    padding: 5vh;
+    background-color: #282b28;
+    margin-bottom: 1vh;
+    margin-top: 50px;
+    padding: 6vh;
   }
   
   .btnContainer {
@@ -45,9 +47,11 @@
   }
 
   .ul{
-    display: flex;
+    display:flex;
     justify-content: center;
     background-color: rgb(113, 228, 90);
+    margin-bottom: 100px;
+    margin-right: 30px;
     
     
   }
@@ -77,6 +81,13 @@
   background-color: #f7d722;
   color: #362c18;
   border: 1px solid #f0a309;
+}
+
+.foo{
+  display: flex;
+  justify-content: center;
+  color: #c6f009 ;
+  margin-bottom: 8vh;
 }
 
 

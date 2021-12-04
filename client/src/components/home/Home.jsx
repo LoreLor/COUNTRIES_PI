@@ -155,6 +155,7 @@ export default function Home(){
                         className={s.btn}>Refresh Country
                 </button>
             </div>
+            <div className={s.countryContainer}>
                 {currentCountries.length?(
                     currentCountries.map((c) => (
                         <CardCountry
@@ -168,13 +169,13 @@ export default function Home(){
                     ):(<h3>Country Not found</h3>)
                 } 
               </div> 
-            <div className={s.countryContainer}>
                 <CardsCountries  countries={currentCountries} />
             </div>
                 <ul className={s.ul}>{renderPages}</ul>
-            
-            
-            
+            <footer className={s.foo}>
+                by Lorena De Armas
+            </footer>
+
         </>
     )
 }        
