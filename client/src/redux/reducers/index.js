@@ -108,6 +108,16 @@ const initialState = {
                   return  b.population - a.population;
                 })      
             }
+            if(action.payload ==='Small'){
+                sorts= state.filters.sort((a,b)=>{
+                    return a.area -b.area;
+                })
+            }
+            if(action.payload ==='Big'){
+                sorts= state.filters.sort((a,b)=>{
+                    return b.area - a.area;
+                })
+            }
             
             return {
                 ...state,

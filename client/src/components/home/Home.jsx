@@ -144,6 +144,8 @@ export default function Home(){
                         <option value='ZA'>Countries ZA</option>
                         <option value='ASC'>Population ASC</option>
                         <option value='DESC'>Population DESC</option>
+                        <option value='Small'>Small Area</option>
+                        <option value='Big'>Big Area</option>
                     </select>
                  </div>  
 
@@ -166,11 +168,13 @@ export default function Home(){
                     ):(<h3>Country Not found</h3>)
                 } 
               </div> 
-
             <div className={s.countryContainer}>
                 <CardsCountries  countries={currentCountries} />
             </div>
-            <ul className={s.ul}>{renderPages}</ul>
+                <ul className={s.ul}>{renderPages}</ul>
+            
+            
+            
         </>
     )
 }        

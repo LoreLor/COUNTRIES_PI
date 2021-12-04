@@ -19,7 +19,7 @@ import s from './AddActivity.module.css';
         }
         if(!activity.duration){
             errors.duration = 'You need input a Duration';
-        }else if(!/[0-9]/.test(activity.duration)){
+        }else if(/[a-zA-Z - 0]/.test(activity.duration)){
             errors.duration='You need a valide input'
         }
         if(!activity.season){
@@ -27,6 +27,9 @@ import s from './AddActivity.module.css';
         }
         if(activity.countries.length === 0){
             errors.countries = 'You need select Countries';
+        }else if(activity.countries === activity.countries){
+            errors.countries = 'You need select an other Country';
+
         }
         return errors;
     }
@@ -180,10 +183,11 @@ import s from './AddActivity.module.css';
                             <select key={activity.countries}
                                     name='countries'
                                     type='text'
-                                    value={activity.countries}
+                                    
                                     className={errors.countries && "danger"}
                                     onChange={handleSelect}>
                                 <option value=''>Choose your Countries</option> 
+                              
                                 {countries.map((c) => (
                                     <option 
                                     key={c.id}

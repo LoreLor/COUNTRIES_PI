@@ -1,16 +1,18 @@
 *{
     box-sizing: border-box;
-     color:#151615 ;
+     color:#202520 ;
     font-weight: bold; 
 }
 
 .container{
-    margin-top: 10px;
+    margin-top: 2px;
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     background-size: cover;
-    background: url('../../images/actvidades_turisticas.jpg');
+    /* background: url('../../images/turismo.jpg'); */
+    background: black;
+
 }
 
 
@@ -19,7 +21,7 @@
     grid-template-columns: 1fr ;
     gap:15px;
     padding: 1vh 3vh;
-    background-color: rgb(220, 228, 173);
+    background-color: rgb(224, 218, 164);
     box-shadow: -2px 2px 104px 12px rgb(59, 199, 54);
     z-index:5;
     border-radius: 15px;
@@ -35,7 +37,7 @@
     margin-top: 12px;
     margin-bottom: 2vh;
     margin-left:180px;
-    color:rgb(64, 146, 31)
+    color:rgb(64, 146, 31);
 }
 
 .formSection{
@@ -57,9 +59,8 @@
     margin: 12px;
     padding: 5px;
     text-transform: capitalize;
-    
+    font-size: 25px;
 }
-
 
 .danger{
     border: 2px solid crimson;
@@ -105,18 +106,18 @@ ul{
     padding: 5px;
     display: inline-table;
     width: 30px;
-    
+    font-size: 25px;
 }
 .label{
     display: flex;
-    font-weight: 600;
+    font-weight: 550;
     width: 180px;
     padding:10px;
     min-height: 40px;
     cursor:pointer;
 }
 body{
-    background-color: black;
+    background-color: rgb(8, 2, 2);
 }
 
 p.danger{
