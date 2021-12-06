@@ -1,5 +1,5 @@
 <p align='left'>
-    <img src='https://github.com/LoreLor/COUNTRIES_PI/blob/main/client/src/images/continents.jpg' </img>
+    <img src='https://github.com/LoreLor/COUNTRIES_PI/blob/main/client/src/images/mapamundi.jpg' </img>
 </p>
 
 # Individual Project - Henry Countries
